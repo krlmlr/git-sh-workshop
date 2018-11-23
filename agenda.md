@@ -15,55 +15,72 @@
 
 Mental model: Sequence of commits, staging area.
 
-# The shell
+## The shell
 
 - `git sh`
-- Shortcuts for frequently used commands
+- `bash` + omit `git`
+    - Shortcuts for frequently used commands
 - Ctrl + C
 - Cursor keys, Ctrl + R
 - Ctrl + D
 
-# The basic commands, revamped
+## The basic commands, revamped
 
 - `status` / `diff`
 - `add` / `reset`
-- `commit`
+- `commit -m "message"`
 - `checkout` / `clean`
-- `log`
+- `log`, `log --patch`
+- `blame`
 
-# Using `less`
+# Interactive commands
+
+## Using `less`
 
 - Scrolling
 - Home, End
 - Search with `/`
 
-# Getting help
+## Getting help
 
 - `git help`
 
-# Interactive commands
+## Interactive commands
 
 - `commit` without `-m`
 - `add -p` with editing
 
-# Using `vi`
+## Using `vi`
 
 - Navigation
 - Insertion/deletion
 - Deletion of whole lines
 - Quitting
 
-# Branching and merging
+# Feature branch workflow
 
-- `checkout -b`
-- `branch`, `reset --hard`
-- `checkout`
-- `merge`
+0. Empty status, all tests green
+1. Switch to new branch
+2. Develop
+3. Review
+4. Merge to `master`
+5. Go to 0
+
+## Branching and merging
+
+- `branch`
+- `checkout -b <branch>`
+- `branch <branch>`
+- `reset --hard`
+- `checkout <branch>`
+- `merge <branch>`
 - `log`, `log --first-parent`
+- `branch -d`
+- `reset`
 
 Mental model: DAG of commits, branches are pointers.
 
-# Conflict resolution
+## Conflict resolution
 
 - `merge --abort`
 - `diff`, `diff --ours`, `diff --theirs`
@@ -71,13 +88,25 @@ Mental model: DAG of commits, branches are pointers.
 
 Mental model: overlapping patches.
 
-# Rebasing
+## Navigation, refspecs
+
+- `HEAD`
+- `HEAD^`
+- sha1
+- `checkout <ref>`
+- `ref..ref`
+- `ref...ref`
+- `diff <refspec>`
+
+Mental model: Naming, navigation, exclusion.
+
+## Rebasing
 
 - `rebase`
 - `rebase --interactive`
 - `commit --fixup`
 
-Mental model: rewrite history:
+Mental model: rewrite history.
 
 # Bisection
 

@@ -1,3 +1,5 @@
+# Exercise C1 here
+
 # Exercise B1 here
 
 show_green <- function() {
@@ -7,3 +9,5 @@ show_green <- function() {
 # Exercise A3 here
 
 # Exercise B1 here
+
+# Exercise C2 here
