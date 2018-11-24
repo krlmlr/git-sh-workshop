@@ -1,5 +1,30 @@
 # git-sh-workshop
 
+## Installation
+
+Should work on OS X and Linux, untested on Windows. 
+
+### git-sh
+
+For the prompt and to avoid writing `git` in front of every command.
+
+1. Clone https://github.com/krlmlr/git-sh
+2. Run `make` in this directory
+3. One of:
+    - Run `mkdir -p ~/bin; ln -s ${PWD}/git-sh ~/bin/git-sh` in this directory
+    - Run `sudo make install` in this directory
+
+### Git aliases
+
+For the shortcuts covered here: `s`, `d`, `a`, `co`, ...
+
+Paste the contents of [`config.sh`](tree/master/config.sh) into your terminal, or run:
+
+```sh
+curl https://raw.githubusercontent.com/krlmlr/git-sh-workshop/master/config.sh | sh
+```
+        
+
 ## rstudio.cloud instance
 
 - https://rstudio.cloud/project/143049
@@ -79,7 +104,7 @@ git reset --hard origin/master
     - `cob`, `b`
 
 1. Adapt `show_cyan()` to call `glue(inverse(cyan(...)))` instead of `glue(cyan(...))`. Commit. Because you wanted to do it on a new `f-cyan-inverse` branch (instead of `f-magenta`), you need to switch retroactively.
-    - `b <branch>`, `reset --hard`, `co <branch>`
+    - `b <branch>`, `q --hard`, `co <branch>`
 
 1. Create a branch `f-cyan-underline` from `master`, adapt `show_cyan()` to call `glue(underline(cyan(...)))` instead of `glue(cyan(...))`.
     - `cob <branch> master`
