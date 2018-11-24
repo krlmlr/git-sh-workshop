@@ -41,17 +41,23 @@ git reset --hard origin/master
 8. Start implementing a `show_pink()` function, then throw it away.
     - `coa`
 
-9. Experiment with throwing away selective changes.
-    - `cop`
+9. Create a new file, save it, then throw it away.
+    - `clean -n`, `clean -f`
 
-10. Create a new file, save it, then throw it away.
-    - `clean -df`
+10. Create a new file in a new directory, then throw it away.
+    - `clean -nd`, `clean -fd`
 
-11. Create a new file, commit it.
+11. Create a new file. What does the status look like?
     - `a`
 
-12. Remove this file, commit this change.
-    - `a`
+12. Remove this file. What does the status look like?
+    - `rm`
+
+13. Reset to the previous commit. Check the status.
+    - `qhp`
+
+14. Reset to the previous commit once more. Check the status.
+    - `qhp`
 
 ### B: Interactive commands
 
@@ -76,7 +82,7 @@ git reset --hard origin/master
     - `b <branch>`, `reset --hard`, `co <branch>`
 
 1. Create a branch `f-cyan-underline` from `master`, adapt `show_cyan()` to call `glue(underline(cyan(...)))` instead of `glue(cyan(...))`.
-    - `cob master`
+    - `cob <branch> master`
 
 1. Visualize all branches.
     - `la`
@@ -92,9 +98,6 @@ git reset --hard origin/master
 
 1. Visualize the differences from each merge.
     - `lfp`
-
-1. Move the head of `master` to `f-magenta`. Explain. Move it back.
-    - `reset <branch>`
 
 1. Delete the branches that you have merged successfully. Try deleting the `f-cyan-underline` branch.
     - `bm`, `b -d`
@@ -216,3 +219,11 @@ Task: Find the commit that introduced that magenta output function.
 
 1. Finish bisection.
     - `bisect reset`
+
+### H: Not covered
+
+1. Push/pull
+
+1. More than one remote
+
+1. Cherry-pick, revert, multiple cherry-pick
